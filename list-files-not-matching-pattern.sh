@@ -1,0 +1,1 @@
+ls|grep -v ${1:txt}

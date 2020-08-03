@@ -1,0 +1,1 @@
+sed -E 's/"//g; s/([0-9]+),([0-9]+)/\1.\2/g; s/ [0-9]{2}:[0-9]{2}//; s/([0-9]+) ([0-9]+)/\1\2/g; s/Status: Zrealizowana //; s/Kurs: [0-9]\.[0-9]+//; s/\t +//g; s/ +\t//g' cinkciarz_2018.tsv > cinkciarz1.tsv
