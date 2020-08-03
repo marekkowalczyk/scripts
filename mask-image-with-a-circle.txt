@@ -1,0 +1,5 @@
+convert <image>.jpg \
+\( +clone -threshold -1 -negate -fill white -draw "circle 200,200 200,0" \) \
+-alpha off -compose copy_opacity -composite <image>.png
+
+convert <image>.jpg \( +clone -threshold -1 -negate -fill white -draw "circle 200,200 200,0" \) -alpha off -compose copy_opacity -composite <image>.png

@@ -1,0 +1,10 @@
+resize a video
+
+Using the `-vf scale` filter, it is possible to resize videos to a desired size:
+
+ffmpeg -i input.avi -vf scale=320:240 output.avi
+
+The same works with images as well:
+
+ffmpeg -i input.jpg -vf scale=320:240 output_320x240.png
+

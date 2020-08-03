@@ -1,0 +1,44 @@
+ffmpeg -i IMG_5761.MOV -ss 00:00:20 -codec copy -t 50 output.mov
+
+ffmpeg -n -i IMG_5761.MOV -ss 00:00:20 -to 00:00:25 output.mov
+
+ffplay -vf "drawtext=fontfile=/Users/marekkowalczyk/Library/Fonts/InputMono-Regular.ttf:text='%{pts\:hms}':box=1:x=(w-tw)/2:y=h-(2*lh)" file1.mov
+
+***
+
+
+
+ffmpeg -i voice-memo-2020-06-30-14-59-44-new-recording-2.m4a -ss 00:00:20 -codec copy -t 50 output.mov
+
+
+ffmpeg -i movie.mp4 -ss 00:00:03 -t 00:00:08 -async 1 -strict -2 cut.mp4
+
+
+
+
+Trim a media file using start and stop times
+
+To trim down a video to smaller clip using start and stop times, we can use the following command.
+
+ffmpeg -i input.mp4 -ss 00:00:50 -codec copy -t 50 output.mp4
+
+ffmpeg -i audio.mp3 -ss 00:01:54 -to 00:06:53 -c copy output.mp3
+
+
+***
+
+ffmpeg -i movie.mp4 -ss 00:00:03 -t 00:00:08 -async 1 -strict -2 cut.mp4
+
+***
+
+split the large video files into multiple smaller parts like below.
+
+$ ffmpeg -i input.mp4 -t 00:00:30 -c copy part1.mp4 -ss 00:00:30 -codec copy part2.mp4
+
+Here, -t 00:00:30 indicates a part that is created from the start of the video to the 30th second of video. -ss 00:00:30 shows the starting time stamp for the next part of video. It means that the 2nd part will start from the 30th second and will continue up to the end of the original video file.
+
+play audio wideo
+
+ffplay video.mp4
+
+https://www.ostechnix.com/20-ffmpeg-commands-beginners/

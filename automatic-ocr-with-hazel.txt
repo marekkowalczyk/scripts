@@ -1,0 +1,103 @@
+https://talk.automators.fm/t/create-ocr-layer-in-pdf-with-hazel-freeware-solved/4599/3
+
+
+***
+
+
+
+
+I recently got a copy of Hazel and have been doing a bit of tinkering around with various ways to automate my file management. Because, y’know, I can do it by hand, but why would I when I can make a computer do it for me? That’s the whole point of computers, after all.
+I have a great deal of PDFs — something about scanning every paper, handout, receipt, or bit of mail I’ve received in the past six years or so does that. And if you have a commercial-grade scanner, it can be pretty easy to automate that stuff with Hazel, as the scanner will run everything it scans through Optical Character Recognition, and the PDF you’ll get will be nicely searchable.
+Unfortunately, the scanner I’ve got, while a pretty good one, is in a different price tier than the ones that’ll do the automatic OCR, so I needed a way of doing that after the fact.
+There are some guides to doing that, such as this one, but they tend to require either Acrobat Pro or PDFPen Pro, which both have price tags above the “a couple hours of tinkering and no money” that I was hoping to spend on this project.
+Throw a few computer science keywords on what you’re Googling, though, and you’ll find stuff that’s more in that vein. So, compiled here after I used Chase as a guinea pig, a guide to putting together automated OCR for free.
+
+Prerequisites
+Before we can automate OCR, we need a few things installed. Open up Terminal, and let’s go.
+sudo easy_install pip
+(For those of you who didn’t put a few years into classes on computer science, I’ll try to explain as I go along. That first word, sudo, means “super user do”, basically; it’s the Admin Override for terminal commands. Be careful with it, you can make quite a mess tinkering with it. The next bit, easy_install, is part of the version of Python that comes default with macOS. pip is what we’re telling easy_install to install; ironically, pip is the modern version of easy_install.)
+The first time you use sudo in a Terminal session, you’ll be prompted for your password; if you’re not an administrator on the mac you’re using, you’ll need an administrator password. That’s a good opportunity to check with the administrator if this is something you should be doing at all.
+Once pip is done installing, we’re going to get another installation helper, Homebrew:
+sudo /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+Again, this is just installing a piece of software, Homebrew.
+
+Components
+Now that we’ve got the infrastructure built, we’re going to install the components that the OCR system uses.
+brew install tesseract
+brew install ghostscript
+brew install poppler
+brew install imagemagick
+(If any of those fail, you can try to rerun them with sudo added to the front, i.e. sudo brew install tesseract.)
+For reference: Tesseract is the actual OCR engine, Ghostscript makes it easier to interact with the PDF format, Poppler is similarly PDF-related, and ImageMagick handles conversion between basically any types of images.
+Finally, we’ll use pip to install a specific version of another:
+sudo pip install reportlab==3.4.0
+ReportLab is yet another PDF-related library, but version 3.5.0 has some compatibility issues with the OCR system.
+
+Installation
+Finally, we’ll get the actual thing that ties these all together:
+sudo pip install pypdfocr
+PyPDFOCR is a lovely open-source project that ties all these components together into a single thing. Once it’s installed, you can use it from the terminal:
+pypdfocr {filename}, where you replace {filename} with the non-OCR’d version of the file you want in OCR’d form. It’ll take a bit to run, but once it’s done, you’ll have a file (named {filename}_ocr.pdf) that contains, hopefully, the text of the document you scanned.
+Go ahead and test it; if you get an error about the file not being found, see if the file name or directory structure included a space. If it did, tweak the command a bit: instead of pypdfocr {filename} you’ll need to do pypdfocr "{filename}".
+You may also get an error that mentions File "/Library/Python/2.7/site-packages/pypdfocr/pypdfocr_pdf.py", line 190… and a bit more after that. If it’s AttributeError: IndirectObject…, then you’ll need to tweak part of the code.
+cd /Library/Python/2.7/site-packages/pypdfocr
+sudo nano pypdfocr_pdf.py
+That’ll open up nano, a very lightweight text editor. Press control+W, type in orig_rotation_angle = int(original_page.get and hit return; this will take you to the line we want to edit. It’ll read orig_rotation_angle = int(original_page.get('/Rotate', 0)) — we want to change it to orig_rotation_angle = int(original_page.get('/Rotate', 0).getObject()) by adding .getObject() before the last close-paren.
+Once you’ve done that, press control+X, then hit return again. Try OCRing something again; it should work this time.
+
+Using Hazel
+Now all you need to do to have Hazel automatically OCR a PDF is, in the actions, add a “Run shell script” action, use “embedded script”, and in the ‘edit script’ bit, put in pypdfocr "$1".
+Keep in mind, this doesn’t replace the PDF in place, it’ll create a copy with _ocr added to the end of the name. If you’d like the original to be deleted once it’s done, rather than having Hazel do it, just add a second line to the embedded script: rm "$1"
+You’ll probably want another rule to move the OCR’d versions somewhere else; while you’re building that, you can also use the ‘rename’ action to remove the _ocr bit, just tell it to replace “_ocr” with “”.
+Have fun automating!
+
+And, as a result, useable for Hazel sorting by way of the ‘contents’ filter. ↩
+I was hoping to link to Katie Floyd’s original post about it, but her website is down at the moment, so I guess I won’t be doing that. ↩
+Technically speaking, I think all I added was “site:github.com”, but that did the trick. ↩
+This assumes you have a Mac, since you’re working with Hazel, and that you’re willing to do a bit of tinkering in the terminal, which I also kinda assumed, since you’re working with Hazel. ↩
+I think that’s irony; I was a computer science major, not an English major. ↩
+“the Printable Document Format format” ↩
+Tip: you can type pypdfocr  (including the trailing space) and then drag-and-drop the PDF from Finder into the Terminal, and it’ll automatically fill in the filename. If any part of the path includes a space, though, it’ll fail, so for filenames or folders that contain spaces, do pydpfocr "{filename}" – type pypdfocr ", drop in the file, and then ", and then hit enter. ↩
+Caveat: Tesseract isn’t perfect, especially with regard to the formatting, so don’t expect this to give you a perfectly-formatted version of whatever you scanned. That said, the process is lossless: {filename}_ocr.pdf is built by taking the original PDF file and then adding an invisible text layer over the analyzed text, so you won’t lose any information by doing this, you just might not gain anything useful. ↩
+Note that it’ll spit {filename}_ocr.pdf out not necessarily where the original file was, but wherever the Terminal session currently is; if you’re unsure about where that is, you can use pwd to have it displayed, or just open . to open it in Finder. ↩
+Don’t ask me why this is all “you might have to do this”, because I genuinely don’t know why this problem only pops up some of the time. ↩
+Tags
+automation, Hazel, macOS, OCR, PDF
+←
+Playlist of the Month: September 2018
+→
+Playlist of the Month: October 2018
+3 replies on “Automatic OCR with Hazel”
+Automatic OCR with Hazel: The Easy Way – Grey Pattersonsays:
+2019-11-14 at 08:56
+This Article was mentioned on grey280.net
+
+REPLY
+Davidsays:
+2020-01-09 at 16:09
+I keep getting tesseract-ocr execution failed!
+Error, unknown command line argument ‘-psm’
+Any thoughts on how to fix that?
+
+REPLY
+Greysays:
+2020-01-12 at 15:25
+I know that Tesseract released version 4.0 since I wrote this post, which I’d assume is an API-breaking change to some degree or another. Given that PyPDFOCR hasn’t been updated in three or four years, it’s not all that surprising that it’s broken. Depending on your use case, I’d recommend checking out ocrmypdf as an alternative; I wrote a bit about that in my updated version of this post.
+
+REPLY
+BY POST AUTHOR
+Comments?
+
+This site uses Akismet to reduce spam. Learn how your comment data is processed.
+
+To respond on your own website, enter the URL of your response which should contain a link to this post's permalink URL. Your response will then appear (possibly after moderation) on this page. Want to update or remove your response? Update or delete your post and re-enter your post's URL again. (Learn More)
+URL/Permalink of your article
+
+© 2020 Grey Patterson
+
+Powered by WordPress
+
+To the top ↑
+
+
+https://greypatterson.me/2018/10/automatic-ocr-with-hazel/

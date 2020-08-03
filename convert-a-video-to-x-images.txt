@@ -1,0 +1,6 @@
+convert a video to x images
+
+This command will generate imagess named `image1.jpg`, `image2.jpg`, etc, from a given video file. The following image formats are available: PGM, PPM, PAM, PGMYUV, JPEG, GIF, PNG, TIFF, SGI.
+
+ffmpeg -i video.mpg image%d.jpg
+

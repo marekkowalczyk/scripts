@@ -1,0 +1,13 @@
+extract sound from a video and save it in mp3 format
+
+Creating an audio file from a video is an easy task:
+
+ffmpeg -i source_video.avi -vn -ar 44100 -ac 2 -ab 192k -f mp3 sound.mp3
+
+Explanations:
+
+- Source video : source_video.avi
+- Audio bitrate : 192kb/s
+- output: mp3 format
+- Generated sound : sound.mp3
+

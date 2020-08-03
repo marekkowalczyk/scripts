@@ -1,0 +1,18 @@
+# Basic mouse operations
+
+- Button One - Select text.
+- Button One double click - Select word under cursor, or at the end/start of a line, select the whole line.
+- Button Two - Execute text*.
+- Button Three - Plumb, if plumb fails, search for next occurrence of text*.
+
+* This applies either to text ‘sweep’ by the mouse while holding down this button, or to the word/command under the cursor if it is clicked once.
+
+# Mouse chords
+
+After selecting with Button One and while still holding Button One down (These chords also work with text selected by double-clicking, the double-click expansion happens when the second click starts, not when it ends):
+Clicking Button Two cuts.
+clicking Button Three pastes (Can be reverted by clicking Button Two immediately afterwards).
+To snarf (ie., copy) click Button Two** immediately followed by Button Three*.
+While holding down button 2 on text to be executed as a command, clicking button 1 appends the text last pointed to by button 1 as a distinct final argument. (For example, to search for literal text one may execute Look text with button 2 or instead point at text with button 1 in any window, release button 1, then execute Look, clicking button 1 while 2 is held down.)
+
+http://acme.cat-v.org/mouse

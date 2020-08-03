@@ -1,0 +1,10 @@
+Format text file
+
+fmt -w 80 < input > output
+
+fold -w 72 -s in.txt > out.txt 
+
+https://twitter.com/climagic/status/1076207885850460160?s=12
+
+https://ftp.gnu.org/old-gnu/Manuals/textutils-2.0/html_chapter/textutils_4.html
+

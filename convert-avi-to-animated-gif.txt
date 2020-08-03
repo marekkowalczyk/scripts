@@ -1,0 +1,6 @@
+convert avi to animated gif uncompressed
+
+You can easily create an animated gif from a video file:
+
+ffmpeg -i original_video.avi animated_gif.gif
+

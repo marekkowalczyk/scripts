@@ -1,0 +1,1 @@
+curl "https://www.pb.pl/gazele/wyszukiwarka/?page=[1-58]&territory=8&year=2019&nip=&name=" -o "gazele_#1.html"

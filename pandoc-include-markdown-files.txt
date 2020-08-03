@@ -1,0 +1,14 @@
+pandoc --from markdown --to latex --filter pandoc-include input.md
+
+```include
+/absolute/file/path.md
+relative/to/the/command/root.md
+#do/not/include/this.md
+```
+
+```include
+test2.md
+```
+
+
+https://hackage.haskell.org/package/pandoc-include

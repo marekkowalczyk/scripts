@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Mixdown movie sound to mono, to preserve video
+
+#	⌘§		Record scratch snippet
+#	⌘⇧§	Insert scratch snippet
+#	ins⇥	Insert scratch snippet
+
+
+ffmpeg -i ${1:infile} -codec:v copy -ac 1 ${2|-ab 192k,|} ${3:outfile}$0
+
+ins
+
+#	⌃R		Execute Line
+#	⌃⌥R	Execute Line and Replace with Result
+#	⌘R		Run script

@@ -1,0 +1,8 @@
+sed -n '/^RD/,/^QA/p' filename | grep -v -e '^RD' -e '^QA' > newfile
+
+awk '/^RD/{p=1}/^QA/{p=0;print}p' file
+
+awk '/^RD/{p=1;next}/^QA/{p=0}p' file
+
+
+awk '/^Content-Type: text\/plain/{p=1}/^--/{p=0;print}p' mail.txt

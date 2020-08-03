@@ -1,0 +1,54 @@
+gs  -sOutputFile=output.pdf  -sDEVICE=pdfwrite  -sColorConversionStrategy=Gray  -dProcessColorModel=/DeviceGray  -dCompatibilityLevel=1.4  -dNOPAUSE  -dBATCH  in.pdf
+
+cpdf -crop "148mm 0mm 155mm 210mm" in.pdf -o odd.pdf;open odd.pdf
+cpdf -crop "8mm 0mm 140mm 210mm" in.pdf -o even.pdf;open even.pdf
+
+pdfcrop odd.pdf odd-crop.pdf;open odd-crop.pdf
+pdfcrop even.pdf even-crop.pdf;open even-crop.pdf
+
+pdftk A=odd-crop.pdf B=even-crop.pdf shuffle A B output out.pdf
+
+gs -sDEVICE=pdfwrite -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -sOutputFile=out-flat.pdf out.pdf
+
+cpdf -scale-to-fit "210mm 297mm" out-flat.pdf -o out-flat-scale.pdf;open out-flat-scale.pdf
+
+cpdf -scale-to-fit "210mm 297mm" sowunia-1.pdf -o sowunia-1-flat.pdf
+
+cpdf -remove-duplicate-fonts -clean -squeeze -compress out-flat-scale.pdf -o out-flat-scale-clean.pdf
+
+
+magick input.pdf -auto-gamma input-gamma.pdf
+
+convert input.png -channel RGB -negate output.png
+
+https://imagemagick.org/script/command-line-options.php#auto-gamma
+
+https://www.imagemagick.org/discourse-server/viewtopic.php?t=32687
+
+set SRC=in.pdf
+
+set HLEN=100
+set VLEN=100
+
+%IM%convert ^
+  %SRC% ^
+  ( +clone ^
+    -threshold 98%% ^
+    +write mpr:ORG ^
+    +delete ^
+  ) ^
+  ( mpr:ORG ^
+    -negate ^
+    -morphology Erode rectangle:%HLEN%x1 ^
+    -mask mpr:ORG -morphology Dilate rectangle:%HLEN%x1 ^
+    +mask ^
+  ) ^
+  -compose Lighten -composite ^
+  ( mpr:ORG ^
+    -negate ^
+    -morphology Erode rectangle:1x%VLEN% ^
+    -mask mpr:ORG -morphology Dilate rectangle:1x%VLEN% ^
+    +mask ^
+  ) ^
+  -compose Lighten -composite ^
+out-edges.pdf

@@ -1,0 +1,16 @@
+encode a video for sony psp
+
+Same goes with Sony PSP: The command line below takes a source video file and creates an output file compatible with Sony PSP.
+
+ffmpeg -i source_video.avi -b 300 -s 320x240 -vcodec xvid -ab 32 -ar 24000 -acodec aac final_video.mp4
+
+Explanations:
+
+- Source : source_video.avi
+- Audio codec : aac
+- Audio bitrate : 32kb/s
+- Video codec : xvid
+- Video bitrate : 1200kb/s
+- Video size : 320px par 180px
+- Generated video : final_video.mp4
+

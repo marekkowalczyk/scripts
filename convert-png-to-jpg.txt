@@ -1,0 +1,3 @@
+mogrify -format jpg *.png — batch convert
+
+convert image.png -background white -flatten -alpha off image.jpg

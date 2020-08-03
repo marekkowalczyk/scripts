@@ -1,0 +1,12 @@
+compress avi to svcd mpeg2
+
+mpeg-2 is the standard format for SVCD and CVD (which you can burn on CDR media and playback on a TV with a SVCD-CVD compatible DVD player) and DVD.
+
+Depending of your player format, you have to use a different command. In the US, NTSC is the standard:
+
+ffmpeg -i original_video.avi -target ntsc-svcd final_video.mpg
+
+If your player is in PAL format, you should use the following instead:
+
+ffmpeg -i original_video.avi -target pal-svcd final_video.mpg
+

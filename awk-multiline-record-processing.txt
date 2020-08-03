@@ -1,0 +1,1 @@
+awk -F "\n" 'BEGIN { RS=""} $2 >= 100 && $2 < 500 {print $3, "\t", $1, "\t", $2}' gazele.txt | sort -nr > gazele_100-499.tsv

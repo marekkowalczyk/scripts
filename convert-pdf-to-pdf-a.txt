@@ -1,0 +1,11 @@
+https://www.pdftron.com/pdf-tools/pdfa-converter/
+
+https://git.ghostscript.com/?p=ghostpdl.git;a=blob_plain;f=doc/VectorDevices.htm;hb=HEAD#PDFA
+
+
+pdf2ps file.pdf
+
+gs -dPDFA -dBATCH -dNOPAUSE -dNOOUTERSAVE -dUseCIEColor -sProcessColorModel=DeviceCMYK -sDEVICE=pdfwrite -sPDFACompatibilityPolicy=1 -sOutputFile=MyOutPutPDF-A.pdf cpdfmanual.ps
+
+gs -dPDFA -dBATCH -dNOPAUSE -dUseCIEColor -sProcessColorModel=DeviceCMYK -sDEVICE=pdfwrite -sPDFACompatibilityPolicy=1 -sOutputFile=output_filename.pdf input_filename.pdf
+

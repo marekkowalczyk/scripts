@@ -1,0 +1,6 @@
+mix a video with a sound file
+
+If you have an audio and video file, you can mix them together:
+
+ffmpeg -i sound.wav -i original_video.avi final_video.mpg
+

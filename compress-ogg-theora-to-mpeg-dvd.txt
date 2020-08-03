@@ -1,0 +1,6 @@
+compress ogg theora to mpeg dvd
+
+More unusual formats, as such as Ogg Theora, can also be converted. Note the use of `-vcodec` and `-acodec` to specify the video and audio codecs to be used:
+
+ffmpeg -i input.ogm -s 720x576 -vcodec mpeg2video -acodec mp3 output.mpg
+

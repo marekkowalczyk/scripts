@@ -1,0 +1,17 @@
+\usepackage{xcolor}
+
+\definecolor{light-gray}{gray}{0.95}
+
+\textcolor{declared-color}{text}
+
+{\color{declared-color}some text}
+
+\pagecolor{declared-color}
+
+\colorbox{declared-color}{text}
+
+\colorbox{declared-color1}{\color{declared-color2}text}
+
+\fcolorbox{declared-color-frame}{declared-color-background}{text}
+
+black, blue, brown, cyan, darkgray, gray, green, lightgray, lime, magenta, olive, orange, pink, purple, red, teal, violet, white, yellow

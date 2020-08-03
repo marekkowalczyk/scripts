@@ -1,0 +1,18 @@
+Transform with y
+
+If you wanted to change a word from lower case to upper case, you could write 26 character substitutions, converting "a" to "A," etc. Sed has a command that operates like the tr program. It is called the "y" command. For instance, to change the letters "a" through "f" into their upper case form, use:
+
+sed 'y/abcdef/ABCDEF/' file
+
+Here's a sed example that convers all uppercase letters to lowercase letters, like the tr command:
+
+sed 'y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/' <uppercase >lowercase
+
+If you wanted to convert a line that contained a hexadecimal number (e.g. 0x1aff) to upper case (0x1AFF), you could use:
+
+sed '/0x[0-9a-zA-Z]*/ y/abcdef/ABCDEF' file
+This works fine if there are only numbers in the file. If you wanted to change the second word in a line to upper case, and you are using classic sed, you are out of luck - unless you use multi-line editing. (Hey - I think there is some sort of theme here!)
+
+However, GNU sed has a uppercase and lowercase extension.
+
+https://www.grymoire.com/Unix/Sed.html#uh-49

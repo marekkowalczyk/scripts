@@ -1,0 +1,1 @@
+echo 'task goes here'$'\n'"$(cat todo.txt)" > todo.txt

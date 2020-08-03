@@ -1,0 +1,27 @@
+:setlocal foldmethod=syntax
+
+# Current fold
+
+## One level
+
+- zo
+- zc
+- za (toggle)
+
+## All levels
+
+- zO
+- zC
+- zA
+
+# Whole buffer
+
+## One level
+
+- zr (open)
+- zm (close)
+
+## All levels
+
+- zR (open)
+- zM (close)

@@ -1,0 +1,10 @@
+convert avi to dv
+
+Another audio/video format conversion. This command will convert a `.avi` file to `.dv`:
+
+ffmpeg -i original_video.avi -s pal -r pal -aspect 4:3 -ar 48000 -ac 2 final_video.dv
+
+This can be used as well:
+
+ffmpeg -i original_video.avi -target pal-dv final_video.dv
+

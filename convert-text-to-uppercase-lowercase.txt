@@ -1,0 +1,17 @@
+tr '[:upper:]' '[:lower:]'
+
+sed on macos doesn't work with the below:
+
+Uppercasing Text with sed
+sed 's/[a-z]/\U&/g'
+1
+sed 's/[a-z]/\U&/g'
+[a-z] is the regular expression which will match lowercase letters. \U& is used to replace these lowercase letters with the uppercase version.
+
+Lowercasing Text with sed
+sed 's/[A-Z]/\L&/g'
+1
+sed 's/[A-Z]/\L&/g'
+[A-Z] is the regular expression which will match uppercase letters. \L& is used to replace these uppercase letters with the lowercase version.
+
+http://bigdatums.net/2017/09/30/how-to-uppercase-lowercase-text-with-sed/#:~:text=Uppercasing%20Text%20with%20sed&text=%5Ba%2Dz%5D%20is%20the%20regular%20expression,letters%20with%20the%20uppercase%20version.

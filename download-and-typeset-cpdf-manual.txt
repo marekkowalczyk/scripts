@@ -1,0 +1,1 @@
+curl -O https://raw.githubusercontent.com/johnwhitington/cpdf-source/master/cpdfmanual.tex &&  gsed --in-place=''  '/includegraphics{logo/d' cpdfmanual.tex && pdflatex cpdfmanual.tex && pdfclean.sh cpdfmanual.pdf

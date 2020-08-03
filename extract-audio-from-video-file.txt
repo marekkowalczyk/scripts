@@ -1,0 +1,32 @@
+ffmpeg -i video.mp4 -f mp3 -ab 128000 -vn music.mp3
+
+-i path to the input file
+-f mp3 ouput is in mp3 format. The third option i.e 
+-ab 192000 encoded at 192Kbps and 
+-vn no video
+
+Last param is the name of the output file.
+
+***
+
+for file in *.m4v; do
+	basename "$file" .m4v
+	ffmpeg -i "$file" -vn -acodec copy "$(basename "$file" .m4v)".aac
+done
+
+ffmpeg -i input-video.avi -vn -acodec copy output-audio.m4a
+
+vn is no video.
+acodec copy says use the same audio stream that's already in there.
+
+***
+
+Bit rates range from 96 to 320 kilobits per second (Kbps). Using a bit rate of 128 Kbps usually results in a sound quality equivalent to what you'd hear on the radio. Many music sites and blogs urge people to use a bit rate of 160 Kbps or higher if they want the MP3 file to have the same sound quality as a CD.
+
+***
+
+Extract Audio
+
+ffmpeg -i input_file -c copy audio.m4a
+
+---

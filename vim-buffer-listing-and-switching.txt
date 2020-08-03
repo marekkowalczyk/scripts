@@ -1,0 +1,11 @@
+Listing buffers
+
+The :buffers command lists the current buffers. There are two alternate names for this command :ls and :files. By default, only listed buffers will be displayed. Unlisted buffers can be included by appending !, for example :ls!.
+
+Switching to another buffer
+
+The command to switch to another buffer is :buffer, which is often abbreviated as :b, :bu or :buf. :buffer can be given either the name or the number of the buffer to edit.
+
+Switching by name
+
+When using the buffer name as the argument to :buffer, you don't have to specify the entire name. However, if more than one buffer matches the given argument then the buffers won't be switched.

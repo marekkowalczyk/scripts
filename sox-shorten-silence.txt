@@ -1,0 +1,8 @@
+Shortening long periods of silence and ignoring noise bursts
+sox in.wav out7.wav silence -l 1 0.3 1% -1 2.0 1%
+Finally, let’s tie it all together by trimming silence longer than 2 seconds down to 2 seconds long, but ignore noise such as pops and clicks amidst the moments of silence.
+
+As a result you’ll see that we’ve cropped out the 0.25 seconds of noise at the beginning of the clip, but left the 0.5 seconds of noise in the middle.
+For actual usage, you’ll probably want to specify something shorter than 0.3 seconds for the duration if you’re just trying to filter out pops and clicks.
+
+https://digitalcardboard.com/blog/2009/08/25/the-sox-of-silence/

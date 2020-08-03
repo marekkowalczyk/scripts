@@ -1,0 +1,3 @@
+cpdf FILE.pdf -set-title "" AND -set-author "" AND -set-subject "" AND -set-keywords "" -o FILE.pdf
+
+exiftool -XMP-dc:Creator="Marek Kowalczyk" -XMP-dc:Publisher="MANDARINE Project Partners" FILE.pdf

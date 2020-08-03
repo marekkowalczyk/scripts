@@ -1,0 +1,16 @@
+encode a video sequence for the ipod iphone
+
+You can easily convert a video for iPhones and older iPods using this command:
+
+ffmpeg -i source_video.avi input -acodec aac -ab 128kb -vcodec mpeg4 -b 1200kb -mbd 2 -flags +4mv+trell -aic 2 -cmp 2 -subcmp 2 -s 320x180 -title X final_video.mp4
+
+Explanations :
+
+- Source : source_video.avi
+- Audio codec : aac
+- Audio bitrate : 128kb/s
+- Video codec : mpeg4
+- Video bitrate : 1200kb/s
+- Video size : 320px par 180px
+- Generated video : final_video.mp4
+

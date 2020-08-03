@@ -1,0 +1,4 @@
+\pagenumbering{gobble}
+\thispagestyle{empty}
+
+https://stackoverflow.com/questions/17232677/disable-page-numbering-converting-markdown-to-pdf-with-pandoc

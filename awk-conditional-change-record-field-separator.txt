@@ -1,0 +1,1 @@
+awk 'BEGIN {FS = "§" ; RS = "|" } ; { printf "\n" "\\sms" ; if ($2 == "from") print "\{Anna Skrobisz\}" ; else print "\{Marek Kowalczyk\}" ; print"\{" $1 "\}" "\{" $4 "\}" }' sms.txt

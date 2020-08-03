@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+for file in "$@"; do
+	filename=$(basename -- "$file")
+#	extension="${filename##*.}"
+	filename="${filename%.*}"
+	cpdf -split "$file" -o "$filename"-%%%.pdf
+	# echo "$file" "$filename"
+done
+
+cpdf -split 0.pdf -o 0-%%%.pdf

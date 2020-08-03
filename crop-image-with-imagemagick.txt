@@ -1,0 +1,9 @@
+If you want the crop rectangle to start at top corner X: 50 Y: 100 and the crop rectangle to be of size W: 640 H:480, then use the command:
+
+mogrify -crop 640x480+50+100 foo.png
+
+To write the cropped image to a new file:
+
+convert foo.png -crop 640x480+50+100 out.png
+
+https://codeyarns.com/2014/11/15/how-to-crop-image-using-imagemagick/

@@ -1,0 +1,1 @@
+#!/usr/bin/env ${1:${TM_SCOPE/(?:source|.*)\.(?:(shell)|(\w+)).*/(?1:bash:$2)/}}

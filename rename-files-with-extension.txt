@@ -1,0 +1,1 @@
+for file in xx*; do mv "$file" "$file".txt; done

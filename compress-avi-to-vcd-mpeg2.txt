@@ -1,0 +1,12 @@
+compress avi to vcd mpeg2
+
+Video CDs are a quick and cheap way to watch a video from your computer on your TV. Converting a video file to VCD is very easy.
+
+The command to use depends on your player format. Let's start with NTSC, the standard in North America:
+
+ffmpeg -i original_video.avi -target ntsc-vcd final_video.mpg
+
+The following is for PAL players, used mainly in Europe:
+
+ffmpeg -i original_video.avi -target pal-vcd final_video.mpg
+

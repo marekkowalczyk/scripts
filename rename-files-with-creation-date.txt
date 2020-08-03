@@ -1,0 +1,4 @@
+for f in *.m4a
+do
+    mv -n "$f" "$(date -r +"%Y-%m-%d"_"$f")"
+done

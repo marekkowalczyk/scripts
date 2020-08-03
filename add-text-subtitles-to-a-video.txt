@@ -1,0 +1,6 @@
+add text subtitles to a video
+
+If you have subtitles for a movie or documentary, it is possible to use FFmpeg to insert them into your video file:
+
+ffmpeg -i input.mp4 -i subtitles.srt -c copy -c:s mov_text output.mp4
+

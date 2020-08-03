@@ -1,0 +1,1 @@
+~$ termgraph ~/Downloads/wiki_sorted.csv --format '{:.0n}'

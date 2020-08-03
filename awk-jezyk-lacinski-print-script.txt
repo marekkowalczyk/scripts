@@ -1,0 +1,2 @@
+awk '/język łaciński/ {print "LAT\t" $0 "\n"}' barba_crescit,_caput_nescit.html.txt | sed 's/(.*$// ; s/ */ / ; s/\t */\t/'
+awk '/\(1\.1\) / {print "POL\t" $0}' barba_crescit,_caput_nescit.html.txt | sed 's/(1\.1)// ; s/ */ / ; s/\t */\t/'

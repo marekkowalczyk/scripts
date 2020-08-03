@@ -1,0 +1,10 @@
+# Concatenate ING CSV files that have been processed with Mathematica 
+
+if [ "$1" != "" ]; then 
+    sed -i '' -e '$a\' *$1.csv 
+    cat *$1.csv > $1.csv 
+    rm Q*$1.csv 
+    echo "Done!" 
+else 
+    echo "Positional parameter 1 cannot be empty" 
+fi

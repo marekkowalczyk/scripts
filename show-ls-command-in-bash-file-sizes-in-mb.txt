@@ -1,0 +1,7 @@
+ls -lh gives human readable file sizes, long format.
+ls -lhS sort by size, in human readable format
+ls -lSrh listing everything in a directory order by file size (still human readable) ascending.
+
+It uses k, M, G, and T suffixes (or no suffix for bytes) as needed so the number stays small, e.g. 1.4K or 178M.
+
+https://unix.stackexchange.com/questions/64148/how-do-i-make-ls-show-file-sizes-in-megabytes/64150

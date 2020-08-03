@@ -1,0 +1,3 @@
+rsync -axuv --delete-after --progress ~/Downloads/ ~/Documents/
+
+rsync -axuv --progress ~/Downloads/ ~/Documents/

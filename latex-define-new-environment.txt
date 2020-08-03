@@ -1,0 +1,3 @@
+\newenvironment{<env-name>}[<n-args>][<default>]{<begin-code>}{<end-code>}
+
+\newenvironment{<env-name>}{<begin-code>}{<end-code>}

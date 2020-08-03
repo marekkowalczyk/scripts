@@ -1,0 +1,7 @@
+(\d{20}) → \n$1\n znajdź numery listów w tekście
+(\d{4})→ $1[SPACJA] podziel po 4 cyfry
+
+
+^.+ (\d{4,}) .+ → $1
+\n → \n\n
+(\d{4}) → $1 

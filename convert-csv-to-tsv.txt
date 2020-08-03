@@ -1,0 +1,8 @@
+csvformat -T input.csv
+
+Convert a CSV file to a custom output format.:
+
+-T, --out-tabs        Specify that the output CSV file is delimited with
+                        tabs. Overrides "-D".
+                        
+https://csvkit.readthedocs.io/en/latest/scripts/csvformat.html

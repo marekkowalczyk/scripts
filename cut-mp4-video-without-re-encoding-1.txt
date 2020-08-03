@@ -1,0 +1,2 @@
+ffmpeg -i source.mp4 -ss 00:00:05 -t 00:00:10 -c copy cut_video.mp4
+

@@ -1,0 +1,1 @@
+awk -v n=3 '1; NR % n == 0 {print ""}' 

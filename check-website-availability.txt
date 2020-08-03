@@ -1,0 +1,6 @@
+Check a website availability with CURL
+
+Execute the following command to check whether a web site is up, and what status message the web server is showing:
+
+$ curl -Is http://www.shellhacks.com | head -1
+HTTP/1.1 200 OK

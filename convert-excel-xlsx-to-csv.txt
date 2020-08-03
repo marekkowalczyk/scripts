@@ -1,0 +1,7 @@
+in2csv sowunia.xlsx > sowunia.csv
+
+sed -i '' -e '$a\' sowunia.csv
+
+cat sowunia*.csv > sowunia.csv
+
+ssconvert sowunia5.xlsx sowunia5.csv

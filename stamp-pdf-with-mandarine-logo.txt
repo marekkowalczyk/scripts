@@ -1,0 +1,1 @@
+cpdf -stamp-on ~/Pictures/mandarine-logo-400.pdf FILE.pdf all -o FILE.pdf

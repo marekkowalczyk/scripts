@@ -1,0 +1,3 @@
+(.+)\n
+
+- [CONSIDER] Weź rzeczy z inboxu dla Sowuni @parallel(true) @autodone(false) @estimate(5m) @context(Places : WAW : Zajączka : Leaving) @tags(Places : WAW : Zajączka : Leaving) @due($1 12:00) @defer($1 04:00)\n

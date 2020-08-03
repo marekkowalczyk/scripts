@@ -1,0 +1,7 @@
+ifeq ($(CC),gcc)
+        $(CC) -o foo $(objects) $(libs_for_gcc)
+else
+        $(CC) -o foo $(objects) $(normal_libs)
+endif
+
+https://www.gnu.org/software/make/manual/html_node/Conditional-Example.html#Conditional-Example

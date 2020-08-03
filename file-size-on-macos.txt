@@ -1,0 +1,8 @@
+BSD's (macOS's) stat has a different format argument flag, and different field specifiers. From man stat(1):
+
+-f format: Display information using the specified format. See the FORMATS section for a description of valid formats.
+... the FORMATS section ...
+z: The size of file in bytes.
+So all together now:
+
+stat -f%z myfile1.txt

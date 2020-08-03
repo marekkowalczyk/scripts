@@ -1,0 +1,61 @@
+I have the following setup:
+
+Smart folders by account to focus on areas of life
+Filtering out less important emails based on sender, list status, words in content
+SpamSieve (not sure about that one yet)
+Today
+Yesterday
+7 Days --- by day
+30 Days --- by day
+>30 Days --- by month
+
+!!! folder in front of everything with hand-picked most important senders (phone message service emails, Flagged & contact form inquiries) by day in case I fall behind. 
+
+This gives me a sense of progress and keeps my brain from exploding when I fall behind. 
+
+Columns: 
+
+- Date Sent (set to be Outline Column)
+- Flags
+- Unread status (in addition to Bold)
+
+For some reason I can't always make it stick. 
+
+The layout is widescreen and I focus on the right-hand side to avoid subcionsciouslsy processing emails ahead on the inbox list when I cannot have the minimal email list enabled. 
+
+MacBook Pro 13" with maximum screen resolution to have as much real estate as possible. 
+
+Two Tags:
+
+WF Waiting For --- I need to come up with a better way of applying it rahter than oging to the Sent folder. Perhaps when Ireply to the original message and have conversation wview enabled. Little Unicode black hourglas
+
+TODO little Unicode black square
+
+Conversation view enabled
+
+Because Ihave the Widescreen I can afford to have full message headers
+
+Black in icons is on purpose so as not to attract too much attention because theyre going to be processed separately. 
+
+Email philosophy: it's just an "empty envelope", ie Ineed to write the message if it is actionable. 
+
+Being a packrat, I archive all messages, dont ever delete anything. But out of sight. 
+
+I start with Today, Ctr-TAB into middle column with list of messsages. I dont look at the list just process one by one, GTD style. 
+ 
+The purpose of this step is to separate actionable from non-actionable. I don't even follow the 2-minute rule because I'm too easily distracted and this is meant to be just like the initial review of email you've collected from your physical inbox. 
+
+I viery quickly scan the message. If not actionable:
+
+ue = toggle Unread and Archive (I have mark as read set to manual mark the conscious effort of skimming the message; so it shoud rather be called mark as skimmed/initially processed --- because not all my inbox is in inbox --- more on that later). 
+
+If actionable in the slightest sense: 
+tt<cr>ue
+
+Thats it. 
+
+Email has been initially triaged and actionable items have been 
+
+No notifications. Counters only for !!! on system menubar (to ensure immediate response) and refresh set to 1 hour so I don't have the urge to check up on email. Maybe should switch to manual check? Not sure yet and that would defeat the purpose of the counter so its either or. OF [CONSIDER] Check email. 
+
+Going by account, I then switch to 

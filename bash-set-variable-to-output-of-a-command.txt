@@ -1,0 +1,2 @@
+SysStarted=$(date -d "$(ps ho lstart 1)" +%s)
+echo $SysStarted 

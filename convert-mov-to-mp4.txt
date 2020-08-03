@@ -1,0 +1,10 @@
+ffmpeg -i my-video.mov -vcodec h264 -acodec mp2 my-video.mp4
+
+
+ffmpeg -i 2020-03-04T16-57-28a.mov -vcodec h264 -acodec mp2 2020-03-04T16-57-28a.mp4
+
+for FILE in *.mov; do
+BASE="${FILE%%.*}"
+ffmpeg -i "$FILE" "$BASE".mp4
+rm "$FILE"
+done

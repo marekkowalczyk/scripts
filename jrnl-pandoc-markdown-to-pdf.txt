@@ -1,0 +1,6 @@
+jrnl --export markdown
+
+
+pandoc --from=markdown-blank_before_header --metadata papersize:a4 --metadata title:Przemyślenia --metadata author:'Marek Kowalczyk' jrnl.txt -o jrnl_"$(date -R +"%Y-%m-%d")".pdf && open jrnl_"$(date -R +"%Y-%m-%d")".pdf
+
+pandoc --from=markdown-blank_before_header jrnl.txt -o jrnl.pdf

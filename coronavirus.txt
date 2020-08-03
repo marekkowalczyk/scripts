@@ -1,0 +1,73 @@
+curl --silent https://corona-stats.online?source=2 > ~/.cache/corona
+
+
+printf "%0.s=" {1..158}; printf "\n" ; cat ~/.cache/corona | awk '/Rank/ || /Poland/' ; printf "%0.s=" {1..158}; printf "\n"
+
+
+printf "%0.s=" {1..158}; printf "\n" ; awk '/Rank/ || /Poland/ || /Ukraine/ || /Germany/ || /Lithuania/ || /Russia/ || /Czechia/ || /Slovakia/ || /Belarus/' ~/.cache/corona ; printf "%0.s=" {1..158}; printf "\n"
+
+
+printf "%0.s=" {1..142}; printf "\n" ; awk '/Rank/' ~/.cache/corona ; printf "%0.s-" {1..142}; printf "\n" ; awk '/Poland/ || /Ukraine/ || /Germany/ || /Lithuania/ || /Russia/ || /Czechia/ || /Slovakia/ || /Belarus/' ~/.cache/corona | sed 's/│/-/g' |sort -t- -k 3nr
+
+
+
+
+curl --silent https://corona-stats.online?source=2 > ~/.cache/corona ;
+
+gsed -E 's/\x1b\[[0-9;]*m//g ; s/ //g ; s/│/|/g ; s/║//g ; s/╟//g ; s/─//g ; s/╢//g ; s/┼//g ; s/,//' ~/.cache/corona | awk '/^[0-9]+/ && $10 {print $2,$10}' FS='|' | sort -k 2rn | column
+
+printf "%0.s=" {1..35} ; printf "\n" ; gsed -E 's/\x1b\[[0-9;]*m//g ; s/ //g ; s/│/|/g ; s/║//g ; s/╟//g ; s/─//g ; s/╢//g ; s/┼//g ; s/,//' ~/.cache/corona | awk '/^[0-9]+/ && $10 && (/Poland/ || /Ukraine/ || /Germany/ || /Lithuania/ || /Russia/ || /Czechia/ || /Slovakia/ || /Belarus/) {print "\t|\t",$2,"\t|\t",$10}' FS='|' | sort -k 4nr | column -s$'\t' -t | nl ; printf "%0.s=" {1..35}
+
+
+---
+
+
+# sort ~/.cache/population | cut -f2 > ~/.cache/population-sorted
+
+case $1 in
+-u|--update)
+	curl --silent https://corona-stats.online?source=2 > ~/.cache/corona ;;
+	
+-h|--help)
+	echo "-u, --update; -g, --generate" ;;
+	
+-g|--generate)
+	
+	LINE=$(printf "%0.s=" {1..47} ; printf "\n")
+	
+	printf "\n$LINE\n"
+	(printf "     #\t|\t     Country\t|\tCasesPer1Mpop\n" ; printf "=======\t|\t================\t|\t==============\n" ; gsed -E 's/\x1b\[[0-9;]*m//g ; s/ //g ; s/│/|/g ; s/║//g ; s/╟//g ; s/─//g ; s/╢//g ; s/┼//g ; s/,//' ~/.cache/corona | awk '(/Poland/ || /Ukraine/ || /Germany/ || /Lithuania/ || /Russia/ || /Czechia/ || /Slovakia/ || /Belarus/){print "\t|\t",$2,"\t|\t",$10}' FS='|' | sort -k 4nr | nl) | column -s$'\t' -t
+	printf "$LINE\n"
+	
+	grep -i "updated" ~/.cache/corona
+	printf "Source: https://corona-stats.online?source=2"
+	printf "\n\n" 
+
+	LINE=$(printf "%0.s=" {1..47} ; printf "\n")
+	
+	printf "\n$LINE\n"
+	(printf "     #\t|\t     Country\t|\tNewDeaths\n" ; printf "=======\t|\t================\t|\t==============\n" ; gsed -E 's/\x1b\[[0-9;]*m//g ; s/ //g ; s/│/|/g ; s/║//g ; s/╟//g ; s/─//g ; s/╢//g ; s/┼//g ; s/,// ; s/▲//g' ~/.cache/corona | awk '(/Poland/ || /Ukraine/ || /Germany/ || /Lithuania/ || /Russia/ || /Czechia/ || /Slovakia/ || /Belarus/){print "\t|\t",$2,"\t|\t",$6}' FS='|' | sort -k 4nr | nl) | column -s$'\t' -t
+	printf "$LINE\n"
+	
+	grep -i "updated" ~/.cache/corona
+	printf "Source: https://corona-stats.online?source=2"
+	printf "\n\n" 
+
+	gsed -E 's/\x1b\[[0-9;]*m//g ; s/ //g ; s/│/|/g ; s/║//g ; s/╟//g ; s/─//g ; s/╢//g ; s/┼//g ; s/,// ; s/▲//g' ~/.cache/corona | awk '(/Poland/ || /Ukraine/ || /Germany/ || /Lithuania/ || /Russia/ || /Czechia/ || /Slovakia/ || /Belarus/){print $2,"\t",$5,"\t",$6}' FS='|' | sort -k 1 > ~/.cache/deaths
+
+	#(paste ~/.cache/deaths ~/.cache/population-sorted)
+	echo $LINE
+	printf "     #\tCountry\t       DeathsPm\tNewDeathsPm\n"
+	echo $LINE
+	(paste ~/.cache/deaths ~/.cache/population-sorted) | awk '{printf $1 ; printf "\t" ; printf "%4.1f", $2/$4 ; printf "\t" ; printf "%4.1f", $3/$4  ; printf "\n"}' FS="\t" | sort -k 3nr | nl
+	echo $LINE
+	grep -i "updated" ~/.cache/corona
+	printf "Source: https://corona-stats.online?source=2"
+	printf "\n\n" 
+
+	
+	;;
+esac
+
+#paste
+#new deaths per million

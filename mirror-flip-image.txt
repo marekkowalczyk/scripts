@@ -1,0 +1,7 @@
+The simplest image distortion is to rearrange the pixels in the image so as to "-flip" it upside-down.
+
+  convert koala.gif  -flip  flip.gif
+[IM Output]
+Or by using "-flop" you can generate a mirror image.
+
+  convert koala.gif  -flop  flop.gif

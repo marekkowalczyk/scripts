@@ -1,0 +1,17 @@
+ffmpeg -i input.wav -c:a libfdk_aac -b:a 128k output.m4a
+
+for file in "$@"
+do
+    filename="${filename%.*}"
+	ffmpeg -i "$file" -c:a libfdk_aac -b:a 128k "$filename".m4a $i &
+done
+
+wait 
+echo "All done"
+
+for file in *16.wav
+do
+   filename="${file%.*}" && ffmpeg -i "$file" -c:a aac -b:a 128k "$filename".m4a &
+   wait 
+   echo "All done"
+done

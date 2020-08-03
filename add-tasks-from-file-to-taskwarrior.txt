@@ -1,0 +1,1 @@
+sed 's/^/task add /' todo.txt | bash

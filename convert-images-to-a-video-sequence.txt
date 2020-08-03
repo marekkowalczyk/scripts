@@ -1,0 +1,6 @@
+convert images to a video sequence
+
+This command will transform all the images from the current directory (named `image1.jpg`, `image2.jpg`, etc..) to a video file named `video.mpg`.
+
+ffmpeg -f image2 -i image%d.jpg video.mpg
+

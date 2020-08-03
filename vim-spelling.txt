@@ -1,0 +1,22 @@
+If you're using Vim to write code and prose, you might want to turn spell checking on only in the local buffer. To do that, use:
+
+:setlocal spell spelllang=en_us
+:setlocal spell spelllang=pl
+
+:set nospell
+
+]s -- next misspelled word
+[s -- previous misspelled word
+
+zg -- mark as Good spelling
+zw -- mark as Wrong spelling
+
+ z= -- suggestions
+ 
+
+ https://www.linux.com/learn/using-spell-checking-vim
+ 
+ 
+:map <F6> :setlocal spell! spelllang=pl<CR> "Spellcheck set to F6                                                                                                                
+
+:map <F7> :set spelllang=en_US

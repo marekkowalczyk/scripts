@@ -1,0 +1,8 @@
+extract a portion of a video
+
+Another very common operation on video files is to extract a specific portion of a given video. This can be done super easily:
+
+ffmpeg -ss 00:00:30 -i orginalfile.mpg -t 00:00:05 -vcodec copy -acodec copy newfile.mpg
+
+In the example above, we are cutting out a part starting at 00:00:30 into the original file with a 5 seconds length. `-ss` indicates the starting time, and `-t` indicates the duration.
+

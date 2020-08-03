@@ -1,0 +1,5 @@
+For example to replace a 'blue' color with say 'white' you would use a command like this...
+
+  convert balloon.gif  -fill white -opaque blue   balloon_white.gif
+  
+  https://www.imagemagick.org/Usage/color_basics/#replace/

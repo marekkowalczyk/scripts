@@ -1,0 +1,14 @@
+Then press [CTRL+z], and htop will be stopped, you can now check the running jobs.
+
+jobs
+You will see something like this:
+
+ggarron@gentoo ~ $ jobs 
+[1]+  Stopped                 htop
+Use fg, to restart the stopped program, and put it to foreground, or bg, to translate it to background.
+
+Take note that these commands work only on the active shell, it means the one from where you start the stopped applications.
+
+To start a program directly to background use &, i.e.
+
+firefox &

@@ -1,0 +1,1 @@
+awk 'NR>10 {print $1}' 1.txt |  cut -c1-7 | uniq -c | awk '{print $2 "," $1}' | termgraph --format {:.0f}

@@ -1,0 +1,52 @@
+qmv directory/
+
+If you don’t want to edit the filenames in dual-column format, use the following command to display the destination file column only.
+
+$ qmv -f do directory/
+
+Where, ‘-f’ refers the format and ‘do’ refers destination-only.
+
+The qmv program will open the filenames in a directory in your default text editor and allows you to edit them — vim
+
+https://www.ostechnix.com/how-to-rename-multiple-files-at-once-in-linux/
+
+***
+
+[38;5;246m# rename[39m
+[38;5;246m# Rename multiple files.[39m
+[38;5;246m# NOTE: this page refers to the command from the `util-linux` package.[39m
+[38;5;246m# For the Perl version, see `file-rename` or `perl-rename`.[39m
+[38;5;246m# Warning: This command has no safeguards and will overwrite files without prompting.[39m
+
+[38;5;246m# Rename files using simple substitutions (substitute 'foo' with 'bar' wherever found):[39m
+[38;5;252mrename[39m[38;5;252m [39m[38;5;252mfoo[39m[38;5;252m [39m[38;5;252mbar[39m[38;5;252m [39m[38;5;252m*[39m
+
+[38;5;246m# Dry-run - display which renames would occur without performing them:[39m
+[38;5;252mrename[39m[38;5;252m [39m[38;5;252m-vn[39m[38;5;252m [39m[38;5;252mfoo[39m[38;5;252m [39m[38;5;252mbar[39m[38;5;252m [39m[38;5;252m*[39m
+
+[38;5;246m# Do not overwrite existing files:[39m
+[38;5;252mrename[39m[38;5;252m [39m[38;5;252m-o[39m[38;5;252m [39m[38;5;252mfoo[39m[38;5;252m [39m[38;5;252mbar[39m[38;5;252m [39m[38;5;252m*[39m
+
+[38;5;246m# Change file extensions:[39m
+[38;5;252mrename[39m[38;5;252m [39m[38;5;252m.ext[39m[38;5;252m [39m[38;5;252m.bak[39m[38;5;252m [39m[38;5;252m*.ext[39m
+
+[38;5;246m# Prepend "foo" to all filenames in the current directory:[39m
+[38;5;252mrename[39m[38;5;252m [39m[38;5;214m''[39m[38;5;252m [39m[38;5;214m'foo'[39m[38;5;252m [39m[38;5;252m*[39m
+
+[38;5;246m# Rename a group of increasingly numbered files zero-padding the numbers up to 3 digits:[39m
+[38;5;252mrename[39m[38;5;252m [39m[38;5;252mfoo[39m[38;5;252m [39m[38;5;252mfoo00[39m[38;5;252m [39m[38;5;252mfoo?[39m[38;5;252m [39m[38;5;252m&&[39m[38;5;252m [39m[38;5;252mrename[39m[38;5;252m [39m[38;5;252mfoo[39m[38;5;252m [39m[38;5;252mfoo0[39m[38;5;252m [39m[38;5;252mfoo??[39m
+
+
+***
+
+imv
+
+The imv program allows us to interactively rename the filenames. Obviously, it is not for bulk renaming. You could only rename the files one by one.
+
+imv directory/file.txt
+
+***
+
+deurlname
+
+The deurlname program removes URL encoded characters (such as %20 representing space) from file names

@@ -1,0 +1,12 @@
+GENERAL SETTINGS FOR A MALE VOICE
+NOTE: Before the emails start flying, allow me to state, again, that every voice is different. Use these as guides, then adjust until the voice sounds good to your ears.
+
+I recently changed my opinions on where to set my presets and I’m continuing to refine them. However, to warm up the low-end of a voice, I’ll add +3 dB of gain around 170 cycles. Then, to improve clarity, I’ll add +4.5 dB of gain around 3500 cycles.
+Finally, I’ll drop the Master Gain by -1 dB to help prevent distortion caused by boosting frequencies.
+GENERAL SETTINGS FOR A FEMALE VOICE
+I do much less work with female voices, but when I do, here is where I start.
+
+To warm up the low-end of a voice, I’ll add +3 dB of gain around 390 cycles. Then, to improve clarity, I’ll add +4.5 dB of gain around 5500 cycles.
+Finally, I’ll drop the Master Gain by -1 dB to help prevent distortion caused by boosting frequencies.
+
+https://larryjordan.com/articles/audio-mixing-to-improve-the-clarity-of-speech/

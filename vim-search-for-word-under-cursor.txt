@@ -1,0 +1,11 @@
+Press * to search for the next occurrence.
+
+Search and replace
+
+1. Put the cursor on foo.
+2. Press * to search for the next occurrence.
+3. Type ciw (change inner word) then bar then press Escape.
+4. Press n (move to next occurrence) then . (repeat change).
+5. Repeat last step.
+
+https://vim.fandom.com/wiki/Search_and_replace_the_word_under_the_cursor

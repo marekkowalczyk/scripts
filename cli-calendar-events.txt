@@ -1,0 +1,6 @@
+icalBuddy eventsToday
+
+
+icalBuddy --bullet ">> " -n -f -npn -nc -iep "title,datetime" -ps "| : |" -po "datetime,title" -tf "%H%M" -df "%RD" -eed -ic MKO,priv,WSB eventsToday+1
+
+http://hasseg.org/icalBuddy/man.html

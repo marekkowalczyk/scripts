@@ -1,0 +1,10 @@
+groff -Kutf8 -Tdvi -mec -ms test.ms > test.dvi
+dvipdfm -cz 9 test.dvi
+open test.pdf
+
+groff -Kutf8 -Tdvi -mec -mm letter.mm > letter.dvi
+dvipdfm -cz 9 letter.dvi
+open letter.pdf
+
+
+groff -Kutf8 -Tdvi -mec -ms letter.mom > letter.dvi; dvipdfm -cz 9 letter.dvi; open letter.pdf

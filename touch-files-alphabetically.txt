@@ -1,0 +1,10 @@
+for file in `find . -type f -name 'IMG*.jpg' | sort `; do touch -am „$file"; done
+for file in `find . -type f -name 'IMG*.jpg' | sort `; do touch -am „$file; done
+find . -type f -name 'IMG*.jpg' -exec touch ‘{}’  \;
+
+
+
+for file in `find . -type f -name 'IMG*.jpg' | sort `; do touch -am "$file"; sleep 1; done
+for file in `find . -type f -name 'IMG*.jpg' | sort `; do touch -t 201901010101 "$file"; sleep 1; done
+for file in `find . -type f -name 'IMG*.jpg' | sort `; do touch -t 201901010101 "$file"; done
+for file in `find . -type f -name 'IMG*.jpg' | sort`; do touch "$file"; done

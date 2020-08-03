@@ -1,0 +1,1 @@
+pandoc -s --bibliography biblio.yaml --filter pandoc-citeproc --csl ieee.csl CITATIONS -t man -o example24c.1

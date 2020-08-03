@@ -1,0 +1,9 @@
+To set a default value for a BASH variable, the syntax is: (good for setting default value for a BASH command line parameter)
+
+VARIABLE=${1:-DEFAULTVALUE}
+
+#set VARIABLE with the value of 1st Arg to the script,
+#If 1st arg is not entered, set it to DEFAULTVALUE
+                                                          
+                                                          
+https://jaduks.livejournal.com/7934.html

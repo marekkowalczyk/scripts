@@ -1,0 +1,1 @@
+echo "Jakim narzędziem pozbyć się ZŁĀWIEL największego wroga terminowości projektów?" | iconv -f UTF-8 -t ascii//TRANSLIT

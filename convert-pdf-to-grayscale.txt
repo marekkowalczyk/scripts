@@ -1,0 +1,15 @@
+convert -colorspace GRAY in.pdf gray.pdf
+
+
+
+convert -density 600 in.pdf -threshold 15% -type bilevel -compress fax out.pdf
+
+gs \
+ -sOutputFile=out.pdf \
+ -sDEVICE=pdfwrite \
+ -sColorConversionStrategy=Gray \
+ -dProcessColorModel=/DeviceGray \
+ -dCompatibilityLevel=1.4 \
+ -dNOPAUSE \
+ -dBATCH \
+ in.pdf

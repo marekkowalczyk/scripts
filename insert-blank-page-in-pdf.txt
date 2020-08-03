@@ -1,0 +1,4 @@
+for file in *.pdf
+do
+	cpdf -pad-before $file 1 -o $file
+done

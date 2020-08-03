@@ -1,0 +1,17 @@
+Example: Transform markdown sections to lowercase
+
+Search:
+
+^# (.+)$
+
+Replace:
+
+# \u\L$1\E
+
+***
+
+To uppercase or lowercase the next character in the replacement, use \u or \l. 
+
+To affect a run of characters, surround them in \U...\E or \L...\E. 
+
+For example, I can use the expression \b(?i:(james))\b to ﬁnd my ﬁrst name in any state of capitalization, and I can use this replacement \u\L$1\E string to ensure that it is title cased after the replacement.

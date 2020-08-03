@@ -1,0 +1,5 @@
+dupfile filedup
+
+$ sed -n 5p file
+
+vi +LineNumber fileName

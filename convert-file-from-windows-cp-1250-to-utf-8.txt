@@ -1,0 +1,1 @@
+iconv -f CP1250 -t UTF-8//TRANSLIT in.file >> out.file

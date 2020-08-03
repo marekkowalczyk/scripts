@@ -1,0 +1,17 @@
+--from markdown+smart+all_symbols_escapable
+
+***
+
+markdown (Pandoc’s Markdown)
+
+Extension: smart
+----------------------
+
+Interpret straight quotes as curly quotes, --- as em-dashes, -- as en-dashes, and ... as ellipses. Nonbreaking spaces are inserted after certain abbreviations, such as “Mr.”
+
+Extension: all_symbols_escapable
+----------------------------------------------
+
+A backslash-escaped space is parsed as a nonbreaking space. It will appear in TeX output as ~ and in HTML and XML as \&#160; or \&nbsp;.
+
+https://pandoc.org/MANUAL.html#typography 

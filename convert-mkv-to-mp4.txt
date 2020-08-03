@@ -1,0 +1,5 @@
+ffmpeg -i ${1:infile}.mkv
+# check for streams that you want (video/audio). be sure to convert/specify DTS 6 channel audio stream
+
+ffmpeg -i input.mkv -strict experimental -map 0:0 -map 0:1 -c:v copy -c:a:1 libmp3lame -b:a 192k -ac 6 output.mp4
+

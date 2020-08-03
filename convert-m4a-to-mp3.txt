@@ -1,0 +1,9 @@
+ffmpeg -i in.m4a -codec:a libmp3lame -qscale:a 1 out.mp3
+
+ffmpeg -i Trump_Never-Give-Up_01.m4a -codec:a libmp3lame -qscale:a 1 Trump_Never-Give-Up_01.mp3
+
+
+
+for file in *.m4a; do
+	ffmpeg out.mp3 -i in.m4a -codec:a libmp3lame -qscale:a 1
+done

@@ -1,0 +1,7 @@
+Start recording by pressing q, followed by a lower case character to name the macro.
+
+Perform any typical editing, actions inside Vim editor, which will be recorded.
+
+Stop recording by pressing q.
+
+Play the recorded macro by pressing @ followed by the macro name.

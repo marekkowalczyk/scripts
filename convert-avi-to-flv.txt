@@ -1,0 +1,7 @@
+convert avi to flv
+
+`.flv` is a very popular format for web videos. This example converts a `.avi` file into `.flv`, while specifying various parameters as such as
+the display size.
+
+ffmpeg -i original_video.avi -ab 56 -ar 44100 -b 200 -r 15 -s 320x240 -f flv final_video.flv
+

@@ -1,0 +1,37 @@
+ffplay -vf "drawtext=fontfile=/Users/marekkowalczyk/Library/Fonts/InputMono-Regular.ttf : fontsize=64 : text='IMG_5761.MOV %{pts\:hms}' : box=1 : x=(w-tw)/2 : y=h-(2*lh)" IMG_5761.MOV
+
+
+for FILE in *.m4v; do
+	BASE="${FILE%%.*}"
+	ffmpeg -i "$FILE" -vf "fps=24,scale=-2:360 , drawtext=fontfile=/Users/marekkowalczyk/Library/Fonts/InputMono-Regular.ttf : fontsize=10 : text='"$BASE" %{pts\:hms}' : box=1 : x=(w-tw)/2 : y=h-(2*lh)" "$BASE".mp4
+#	echo "$FILE" "$BASE".mp4
+#	rm "$FILE"
+done
+
+
+ffmpeg -i 2020-03-04T16-35-49.m4v -vf "fps=24,scale=-2:360 , drawtext=fontfile=/Users/marekkowalczyk/Library/Fonts/InputMono-Regular.ttf : fontsize=10 : text='2020-03-04T16-35-49 %{pts\:hms}' : box=1 : x=(w-tw)/2 : y=h-(2*lh)" 2020-03-04T16-35-49.mp4
+
+
+
+
+ffmpeg -i file1.mov -vf "fps=24,scale=-2:360,drawtext=fontfile=/Users/marekkowalczyk/Library/Fonts/InputMono-Regular.ttf : fontsize=24 : timecode='00\:00\:00\:00' : box=1 : r=24 : x=(w-tw)/2 : y=h-(2*lh)" file2.mov
+
+ffplay -vf "fps=24,scale=-2:360,drawtext=fontfile=/Users/marekkowalczyk/Library/Fonts/InputMono-Regular.ttf : fontsize=24 : timecode='00\:00\:00\:00' : box=1 : r=24 : x=(w-tw)/2 : y=h-(2*lh)" IMG_5761.MOV
+
+ffplay -vf "fps=24,scale=-2:360,drawtext=fontfile=/Users/marekkowalczyk/Library/Fonts/InputMono-Regular.ttf : fontsize=24 : text='IMG_5761.MOV %{pts\:hms}' : box=1 : x=(w-tw)/2 : y=h-(2*lh)" IMG_5761.MOV
+
+text=%{metadata\:filename}
+
+text=%{metadata\:creation_time}
+
+
+IMG_5761.MOV
+
+***
+
+fn="P1010377.MOV" && /usr/local/bin/ffmpeg -i "$fn" -c:a libfaac -q:a 150 -c:v libx264 \ 
+  -crf:v 12 -preset:v veryslow -intra -filter:v \ 
+    "scale=640:-1,drawtext=fontsize=15:fontfile=/Library/Fonts/Verdana.ttf: \ 
+    text='File=[$fn] - TC=': timecode='00\:00\:00\:00': rate=25:fontsize=32: \ 
+    fontcolor='white':box=1:boxcolor=0x000000AA:x=10:y=10" \ 
+  ${fn/.MOV/.MOV.MP4}

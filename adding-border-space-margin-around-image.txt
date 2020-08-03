@@ -1,0 +1,4 @@
+convert rose: -bordercolor none -border 10    border_none.gif
+convert rose: -border 10%x10%  border_percent.jpg
+
+https://www.imagemagick.org/Usage/crop/#border

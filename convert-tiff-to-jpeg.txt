@@ -1,0 +1,44 @@
+for f in *.tif
+do  
+    echo "Converting $f" 
+    convert "$f"  "$(basename "$f" .tif).jpg" 
+done
+
+If you have a folder with subfolders that holds these images. You could use this for loop to find all .TIF files within that folder:
+
+for f in $(find -name *.tif); do ...; done
+
+for f in $(find . -name *.tiff)
+do  
+    echo "Converting $f" 
+    convert "$f"  "$(basename "$f" .tiff).jpg" 
+done
+
+for f in $(find . -name '*.jpg')
+do  
+    echo "Converting $f" 
+    imageoptim "$f"
+done
+
+for f in $(find . -name '*.jpg')
+do
+    echo "Converting $f"
+    jpegoptim $f
+    
+done
+
+for i in $(find . -name '*.jpg'); do
+echo "$i" "${i%.jpg}"
+done
+
+
+for f in $(find . -name '*.tif')
+do  
+    echo "Converting $f" 
+    sips -s format tiff -s formatOptions 80 $f --out jpeg
+done
+
+find . -type f -exec rename 's/[^0-9A-Za-z.\/]/-/g;s/-+/-/g' {} \;
+rename -z *
+
+

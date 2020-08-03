@@ -1,0 +1,10 @@
+combine all of these into a single command:
+
+use semicolon ; between commands
+
+sed '/^FOOTER/d; s/^\"//; s/\"$//; s/\"|\"/|/g' csv > csv1
+I think some sed implementations can't cope with that and might need:
+
+  sed -e '/^FOOTER/d' -e 's/^\"//' -e 's/\"$//' -e 's/\"|\"/|/g' csv > csv1
+
+https://unix.stackexchange.com/questions/229234/join-multiple-sed-commands-in-one-script-for-processing-csv-file

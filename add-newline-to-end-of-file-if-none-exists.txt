@@ -1,0 +1,7 @@
+for OS X sed:
+
+sed -i '' -e '$a\' file
+
+This adds \n at the end of the file only if it doesn’t already end with a newline. So if you run it twice, it will not add another newline:
+
+https://unix.stackexchange.com/questions/31947/how-to-add-a-newline-to-the-end-of-a-file§

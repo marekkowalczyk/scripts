@@ -1,0 +1,10 @@
+for file in *.mov
+do
+	ffmpeg -i $file -ss 00:00:00.001 -vframes 3 $file%04d.jpg -hide_banner
+done
+
+https://www.bugcodemaster.com/article/extract-images-frame-frame-video-file-using-ffmpeg
+
+Two frames per second
+
+ffmpeg -i input.mov -r 2 output_%04d.jpg  

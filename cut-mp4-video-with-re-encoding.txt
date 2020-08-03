@@ -1,0 +1,4 @@
+ffmpeg -i source.mp4 -ss 00:00:05 -t 00:00:10 -async 1 -strict -2 cut_video.mp4
+
+If you want to cut off section from the beginning, simply drop -t 00:00:10 from the command
+

@@ -1,0 +1,1 @@
+cpdf -twoup in.pdf -o out.pdf 

@@ -1,0 +1,6 @@
+for i in {1..12}; do
+	month=$(printf "%02d" $i)
+	mkdir 2019-"$month"
+done
+
+Make directories for each month of the year

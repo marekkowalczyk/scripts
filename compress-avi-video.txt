@@ -1,0 +1,6 @@
+compress avi video
+
+You can compress videos in order to save space on your hard drive. Note the use of the `-s` parameter to resize the output file:
+
+ffmpeg -i original_video.avi -s 320x240 -vcodec msmpeg4v2 final_video.avi
+

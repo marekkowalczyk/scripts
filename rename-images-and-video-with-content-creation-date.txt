@@ -1,0 +1,41 @@
+for file in *.jpg
+do
+    date_created=$(exiftool -exif:all $file | grep 'Date/Time Original' | awk '{print $4}' | sed -e 's/:/-/g' | sed -e 's/ /_/g')
+    filename=$date_created"_"$file
+    echo $filename
+done
+
+***
+
+for file in *.MOV
+do
+    date_created=$(exiftool $file | grep 'Creation Date' | awk '{print $4 "T" $5}' | sed -e 's/:/-/g' | sed -e 's/ /_/g')
+    filename="$date_created"
+    cp "$file" "$filename.mov"
+done
+
+
+***
+
+# m4v
+
+for file in *.m4v;
+do
+    date_created=$(exiftool "$file" | grep 'Content Create Date' | awk '{print $5 "T" $6 $7}' | sed 's/......$//g' | sed -e 's/:/-/g' )
+    filename="$date_created"
+    cp "$file" "$filename".m4v
+done
+
+
+
+
+
+
+rename movie files
+
+***
+
+for file in *.jpg
+do
+	convert -undercolor white -stroke black -pointsize 60 -gravity south -annotate 0 '%[EXIF:DateTimeOriginal]' $file $file
+done

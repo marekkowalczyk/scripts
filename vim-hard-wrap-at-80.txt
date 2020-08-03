@@ -1,0 +1,23 @@
+You have an existing block of text or code in vim. You want to re-format it to wrap to 80-characters.
+
+:set textwidth=80
+
+You might want this setting to apply automatically within certain file types like Markdown:
+
+au BufRead,BufNewFile *.md setlocal textwidth=80
+
+We have that setting in thoughtbot/dotfiles.
+
+Select the lines of text you want to re-format:
+
+v
+
+Reformat it:
+
+gq
+
+Learn more:
+
+:h gq
+
+set formatoptions+=t

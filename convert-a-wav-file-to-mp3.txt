@@ -1,0 +1,6 @@
+convert a wav file to mp3
+
+FFmpeg isn't only for videos, there's a lot you can do with audio files as well. This example will convert a `.wav` file to mp3 format.
+
+ffmpeg -i input_sound.avi -vn -ar 44100 -ac 2 -ab 192k -f mp3 output_sound.mp3
+

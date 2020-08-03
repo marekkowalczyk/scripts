@@ -1,0 +1,33 @@
+[applescript] [calendar]
+
+set theStartDate to (current date) + (1 * days)
+
+
+set hours of theStartDate to 15
+set minutes of theStartDate to 0
+set seconds of theStartDate to 0
+set theEndDate to theStartDate + (1 * hours)
+
+tell application "Calendar"
+	tell calendar "Info"
+		make new event with properties {summary:"Important Meeting!", start date:theStartDate, end date:theEndDate}
+	end tell
+end tell
+
+
+osascript -e 'tell application "iCal" to make new event at end of calendar 1 with properties {start date:date "Sunday, March 5, 2006 1:02:00 PM", summary:"test event"}'
+
+
+osascript -e 'tell application "Calendar" to tell calendar "Info" to make new event with properties {summary:"Important Meeting!", start date:theStartDate, end date:theEndDate}'
+
+osascript -e 'tell application "Calendar" to tell calendar "Info" to make new event with properties {summary:"Important Meeting!", start date:date "2020-04-03 09:00", end date:date "2020-04-03 09:30"}'
+
+text="Hello"
+osascript -e "say \"$text\" using \"Alex\""
+
+
+declare -i count=5;
+osascript -e 'tell app "Xcode" to display dialog "Counted '$count' items." buttons {"Continue"}'
+
+bar=baz
+osascript -e "tell application \"Finder\" to display dialog \"$bar $(id -un)\""

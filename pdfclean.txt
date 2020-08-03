@@ -1,0 +1,7 @@
+#!/bin/sh
+
+for FILE in "$@"; do
+	echo "$FILE"
+	stat -f%z "$FILE"
+	cpdf "$FILE" -remove-duplicate-fonts AND -clean AND -squeeze AND -compress -o "$FILE"
+done

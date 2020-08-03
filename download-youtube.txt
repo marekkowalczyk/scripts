@@ -1,0 +1,3 @@
+youtube-dl -o '/Users/marekkowalczyk/Music/YouTube/%(title)s-%(uploader)s.%(ext)s' --restrict-filename L4k1uExAOa4
+
+youtube-dl -o '/Users/marekkowalczyk/Downloads/%(title)s-%(uploader)s.%(ext)s' --restrict-filename cTBtLE3ESLs

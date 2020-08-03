@@ -1,0 +1,70 @@
+https://computableverse.com/blog/create-website-using-pandoc-make-file
+
+***
+
+https://ninadakk.com/notes-making-website.html
+
+***
+
+https://dev.to/gypsydave5/write-and-deploy-a-super-fast-web-site-in-30-seconds-with-no-framework-4lab
+
+for POST in *.md; do pandoc --to=html5 --output=$(basename ${POST%.md}).html --standalone $POST; done
+
+
+***
+
+https://www.romangeber.com/static_websites_with_pandoc/
+
+build.sh:
+
+#!/bin/bash
+
+MY_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+SITE_PATH=$MY_PATH/site
+
+find $SITE_PATH -name *.md -exec $MY_PATH/process_md_file.sh {} \;
+
+exit 0
+
+process_md_file.sh:
+
+#!/bin/bash
+
+MY_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+SITE_PATH=$MY_PATH/site
+
+fullpath=$1
+dirpath=$( dirname $1 )
+sourcefile=$( basename $1 )
+targetfile=$(echo "$sourcefile" | cut -f 1 -d '.')'.html'
+
+creationDate=$( stat -c %w $fullpath | cut -f 1 -d ' ' )
+lastUpdated=$( stat -c %y $fullpath | cut -f 1 -d ' ' )
+
+echo Processing: $fullpath
+
+rm $dirpath/$targetfile
+pandoc $fullpath -o $dirpath/$targetfile --standalone --css "/css/milligram.min.css" --css "/css/custom.css" --template=$MY_PATH/template.html --variable=lastUpdated:$lastUpdated --variable=creationDate:$creationDate
+
+exit 0
+
+---
+
+The site structure itself looks like this:
+
+.
+├── article1
+│   ├── index.html
+│   └── index.md
+├── article2
+│   ├── index.html
+│   └── index.md
+├── article3
+│   ├── index.html
+│   └── index.md
+├── css
+│   ├── custom.css
+│   ├── milligram.min.css
+│   └── milligram.min.css.map
+├── index.html
+└── index.md

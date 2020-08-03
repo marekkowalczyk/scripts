@@ -1,0 +1,3 @@
+cpdf in.pdf landscape -rotate 90 -o out.pdf
+
+Rotate all landscape pages by ninety degrees.

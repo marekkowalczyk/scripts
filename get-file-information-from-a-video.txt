@@ -1,0 +1,6 @@
+get file information from a video file
+
+You can easily obtain a lot of information on a given video file with the following command line instruction:
+
+ffmpeg -i video.avi
+

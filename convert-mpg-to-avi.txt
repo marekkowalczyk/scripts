@@ -1,0 +1,6 @@
+convert mpg to avi
+
+And vice-versa. This command convert videos to a specified file format:
+
+ffmpeg -i original_video.mpg final_video.avi
+

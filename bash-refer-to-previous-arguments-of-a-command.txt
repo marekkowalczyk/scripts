@@ -1,0 +1,12 @@
+!^      first argument
+!$      last argument
+!*      all arguments
+!:2     second argument
+
+!:2-3   second to third arguments
+!:2-$   second to last arguments
+!:2*    second to last arguments
+!:2-    second to next to last arguments
+
+!:0     the command
+!!      repeat the previous line

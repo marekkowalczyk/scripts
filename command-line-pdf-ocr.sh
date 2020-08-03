@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+ocrmypdf -l ${1|eng,pol|} --output-type pdfa --pdfa-image-compression auto ${2|--clean,--clean-final|} ${3:in.pdf} ${4:out.pdf}
+
+# ocrmypdf --output-type pdfa --pdfa-image-compression jpeg input.pdf output.pdf
+#
+# ocrmypdf -l eng --output-type pdfa --pdfa-image-compression jpeg in.pdf out.pdf
+#
+# ocrmypdf -l eng+fra Bilingual-English-French.pdf Bilingual-English-French.pdf
+#
+# ocrmypdf --sidecar output.txt input.pdf output.pdf
+#
+# --rotate-pages attempts to determine the correct orientation for each page and rotates the page if necessary.
+# --remove-background attempts to detect and remove a noisy background from grayscale or color images. Monochrome images are ignored. This should not be used on documents that contain color photos as it may remove them.
+# --deskew will correct pages were scanned at a skewed angle by rotating them back into place. Skew determination and correction is performed using Postl’s variance of line sums algorithm as implemented in Leptonica.
+# --clean uses unpaper to clean up pages before OCR, but does not alter the final output. This makes it less likely that OCR will try to find text in background noise.
+# --clean-final uses unpaper to clean up pages before OCR and inserts the page into the final output. You will want to review each page to ensure that unpaper did not remove something important.
+#
+# If image, convert to PDF first:
+#
+# img2pdf my-images*.jpg | ocrmypdf - myfile.pdf
+#
+# https://ocrmypdf.readthedocs.io/en/latest/index.html
+#
+# See also https://github.com/tesseract-ocr

@@ -1,0 +1,111 @@
+https://www.pdfen.com/pdf-a-validator
+
+https://www.pdflib.com/pdf-knowledge-base/xmp/free-xmp-validator/
+
+https://www.pdfa.at/en/
+
+\usepackage[a-1b]{pdfx}
+
+
+http://texdoc.net/texmf-dist/doc/latex/pdfx/pdfx.pdf
+
+
+
+
+\begin{filecontents*}{\jobname.xmpdata}
+\Title{Baking through the ages}
+\Author{A. Baker\sep C. Kneader}
+\Language{en-GB}
+\Keywords{cookies\sep muffins\sep cakes}
+\Publisher{Baking International}
+\end{filecontents*}
+\documentclass[11pt,a4paper]{article}
+...
+
+
+▶
+∗
+\Author: (dc:creator)
+the document’s human author(s). Separate multiple authors with \sep.
+▶
+∗
+\Title: (dc:title)
+the document’s title; multiple language versions are supported.
+
+▶
+∗f
+\Language: (dc:language)
+list of languages used within the document.
+▶
+∗
+\Keywords: (dc:subject)
+list of keywords, separated with \sep.
+▶
+∗
+\Publisher: (dc:publisher)
+the publisher(s). Multiple pieces in a publishing chain should be separated with \sep.
+▶
+∗
+\Subject: (dc:description)
+the abstract, or short description.
+
+▶ \Copyright: (dc:rights)
+a copyright statement.
+▶
+f
+\CopyrightURL: (xmpRights:WebStatement)
+location of a web page describing the owner and/or rights statement for this document.
+▶
+f
+\Copyrighted: (xmpRights:Marked)
+‘True’ if the document is copyrighted, and ‘False’ if it isn’t. This is automatically set
+to ‘True’ if either \Copyright or \CopyrightURL is specified, but this can be overridden. For example, if the copyright statement is ‘Public Domain’, then specify also
+\Copyrighted{False}.
+▶
+∗
+\Owner: (xmpRights:Owner)
+specifies the owner(s) of the document or resource.
+▶
+f
+\CertificateURL: (xmpRights:Certificate)
+gives the URL to online proof of ownership, if available.
+
+▶
+∗
+\Contributor: (dc:contributor)
+contributor(s) other than author(s) of the PDF document.
+▶ \Coverage: (dc:coverage)
+statement about the extent or scope of the document’s contents.
+▶
+∗f
+\Date: (dc:date)
+date(s) when something significant occurred relating to the resource (e.g., version
+changes); must be in ISO date format YYYY-MM-DD or YYYY-MM.
+▶
+f
+\PublicationType: (dc:type)
+The type of publication. If specified, must be one of ‘book’, ‘catalog’, ‘feed’, ‘journal’,
+‘magazine’, ‘manual’, ‘newsletter’, ‘pamphlet’. This is automatically set to ‘journal’ if
+\Journaltitle is specified (see below), but can be overridden.
+▶
+∗
+\Relation: (dc:relation)
+how this PDF or resource relates to other document(s) or resources.
+▶
+f
+\Source: (dc:source)
+specifies a source document from which the PDF is derived.
+▶
+f
+\Doi: (dc:identifier, prism:doi, prism:url)
+Digital Object Identifier (DOI) for the document, without the leading ‘doi:’.
+▶
+f
+\ISBN: (dc:identifier)
+the ISBN for the PDF itself, or Book/Monograph of which it is part.
+
+▶
+f
+\URLlink: (dc:identifier, prism:url)
+gives a URL address for an online copy of the document.
+

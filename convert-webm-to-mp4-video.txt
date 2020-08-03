@@ -1,0 +1,8 @@
+Converting WebM to MP4
+
+The simplest catch all command to convert WebM to MP4 using FFmpeg is:
+
+ffmpeg -i video.webm video.mp4
+
+ffmpeg -i IN.webm -vf "fps=24,scale=-2:360" OUT.mp4
+

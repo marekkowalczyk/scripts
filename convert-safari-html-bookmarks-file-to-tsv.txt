@@ -1,0 +1,1 @@
+sed -n '/<DT><A HREF/s/^.*<DT><A HREF="\(.*\)">\(.*\)<\/A>/\1      "\2"/p' bookmarks.html > bookmarks.tsv

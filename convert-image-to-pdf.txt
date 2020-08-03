@@ -1,0 +1,1 @@
+img2pdf my-images*.jpg

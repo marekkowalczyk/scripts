@@ -1,0 +1,14 @@
+echo "Hello World" | mail -s "Test email" someone@example.com
+
+echo "Hello World" | mail -s "Test email" mko1971@gmail.com
+
+cat file.txt | mail -s "File test email" someone@example.com
+
+echo "Hello World" | mail -s "CC Testing email" someone@example.com -c second@example.com, third@example.com
+
+echo "Hello World" | mail -s "BCC Testing email" someone@example.com -b second@example.com, third@example.com
+
+mail -s "Subject" user@address.com -- -f from@address.com < body
+
+mail -s "$SUBJECT" $MAILTO -- -F $MAILFROM -f ${MAILFROM}@somedomain.com
+

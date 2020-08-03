@@ -1,0 +1,3 @@
+To have your Mac read from a text file type say -v Alex -f "textfile.rtf" and press Enter. 
+
+https://www.iclarified.com/2922/how-to-record-text-to-speech-using-terminal

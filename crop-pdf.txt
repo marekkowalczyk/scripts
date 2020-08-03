@@ -1,0 +1,3 @@
+pdfcrop is a utility to calculate and remove empty margins from each page in the input PDF file.
+       
+The resulting output file occupies the minimal paper size needed for  the  contents and is therefore suitable for inclusion as a graphic

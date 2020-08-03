@@ -1,0 +1,6 @@
+convert avi video to mpg
+
+Coverting video files from a format to another is extremely simple. Here, a `.avi` video is converted to `.mpg`:
+
+ffmpeg -i original_video.avi final_video.mpg
+

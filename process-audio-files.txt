@@ -1,0 +1,19 @@
+sox trauma.wav trauma-silence.wav silence -l 1 0.1 1% -1 2.0 1% 
+
+sox trauma-silence.wav trauma-silence-speed.wav tempo -s 2
+
+ffmpeg -i input_file.mp3 -af loudnorm=I=-13:TP=-0.3:LRA=11 output_file.mp3
+
+ffmpeg -i trauma-silence-speed.wav [[NBR trauma-silence-speed-normaliz]]ed.wav
+
+sox trauma-silence-speed-normalized.wav trauma.mp3
+
+ffmpeg -i input.wav -af loudnorm=I=-16:dual_mono=true:TP=-1.5:LRA=11:print_format=summary -f null -
+
+https://developers.google.com/assistant/tools/audio-loudness
+
+./ffmpeg -i /path/to/input.wav \
+    -af loudnorm=I=-16:dual_mono=true:TP=-1.5:LRA=11:print_format=summary \
+    -f null -
+
+ffmpeg -i input.wav -af loudnorm=I=-16:TP=-1.5:LRA=11:measured_I=-27.2:measured_TP=-14.4:measured_LRA=0.1:measured_thresh=-37.7:offset=-0.5:linear=true:print_format=summary output.wav

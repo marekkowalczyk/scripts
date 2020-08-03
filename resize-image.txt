@@ -1,0 +1,8 @@
+convert dragon.gif    -resize 50%  -resample 300 half_dragon.gif
+
+magick '*.jpg' -resize 120x120 thumbnail%03d.png
+
+convert input.jpg -resize 300 output.jpg
+
+mogrify -path output/ -resize 300 *.jpg
+

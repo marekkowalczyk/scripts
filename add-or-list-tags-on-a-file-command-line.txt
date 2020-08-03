@@ -1,0 +1,13 @@
+tag
+
+tag - A tool for manipulating and querying file tags.
+  usage:
+	tag -a | --add <tags> <path>...     Add tags to file
+	tag -r | --remove <tags> <path>...  Remove tags from file
+	tag -s | --set <tags> <path>...     Set tags on file
+	tag -m | --match <tags> <path>...   Display files with matching tags
+	tag -l | --list <path>...           List the tags on file
+	tag -f | --find <tags> <path>...    Find all files with tags, limited to paths if present
+  <tags> is a comma-separated list of tag names; use * to match/find any tag.
+
+https://github.com/jdberry/tag

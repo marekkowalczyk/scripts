@@ -1,0 +1,3 @@
+cpdf -add-text "DRAFT" -color "red" -opacity 0.3 in.pdf -o out.pdf
+
+cpdf -add-text "Uwaga! Tłumaczenie automatyczne nie zredagowane" -color "red" levine.pdf -o levine-draft.pdf

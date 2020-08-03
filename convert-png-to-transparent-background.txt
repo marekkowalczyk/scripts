@@ -1,0 +1,3 @@
+convert in.png -transparent white out.png
+
+https://stackoverflow.com/questions/9155377/set-transparent-background-using-imagemagick-and-commandline-prompt

@@ -1,0 +1,7 @@
+convert -flatten INPUT.png OUTPUT-white.png
+
+for file in pnc*.png; do convert -flatten "$file" "$file"-white.png; done
+
+Remember to add a box around a white file!
+
+https://stackoverflow.com/questions/2322750/replace-transparency-in-png-images-with-white-background

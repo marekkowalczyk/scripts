@@ -1,0 +1,21 @@
+Detox is a utility designed to clean up filenames. It replaces difficult to work with characters, such as spaces, with standard equivalents. It will also clean up filenames with UTF-8 or Latin-1 (or CP-1252) characters in them.
+
+For instance:
+
+$ ls
+Future Crew - Skaven - 2nd Reality.s3m
+$ detox -v .
+
+detox -s iso8859_1 -r -v -n /tmp/new_files
+
+Will run the sequence iso8859_1 recursively, listing any changes, without changing anything, on the files of /tmp/new_files.
+
+detox -s utf_8 -r -v ~/Downloads/
+
+detox -s utf_8 -v *.pdf
+
+detox -r -v -n /tmp/new_files
+
+for file in *.pdf; do detox "$file"; done
+
+for file in *; do detox "$file"; done

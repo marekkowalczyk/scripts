@@ -1,0 +1,7 @@
+awk '{gsub(/\"|\;/,"",$5)}1' file 
+
+awk '{gsub(00,"",$6)}1' umowy.csv
+
+tr -d '";' < input.txt
+
+tr -d '00' < umowy.csv

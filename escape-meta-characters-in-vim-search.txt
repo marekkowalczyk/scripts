@@ -1,0 +1,5 @@
+/\Vstring-to-search
+
+\V affects the rest of the regex.
+
+https://stackoverflow.com/questions/50629000/how-to-efficiently-escape-meta-characters-in-vim-search

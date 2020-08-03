@@ -1,0 +1,7 @@
+mogrify -format png *.*
+
+But be careful. Without the -format option, mogrify overwrites the original images. Make sure to read the documentation
+
+http://www.imagemagick.org/script/mogrify.php
+
+https://stackoverflow.com/questions/15315770/how-to-convert-all-files-in-different-formats-in-given-folder-to-different-fil

@@ -1,0 +1,10 @@
+for file in *.txt; do COMMAND "$file"; done
+for file in *.pdf; do cpdf -squeeze "$file" -o "$file"; done
+for file in *.pdf; do cpdf -clean -squeeze "$file" -o "$file"; done
+for file in *.pdf; do convert -density 300 "$file" "$file"; done
+
+https://stackoverflow.com/questions/20796200/how-to-iterate-over-files-in-a-directory-with-bash
+
+If you have a folder with subfolders that holds these images. You could use this for loop to find all .TIF files within that folder:
+
+for f in $(find -name *.tif); do ...; done

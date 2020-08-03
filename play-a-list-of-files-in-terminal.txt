@@ -1,0 +1,3 @@
+find musicdir -type f -name "*.mp3" | shuf | while read f; do ffplay -autoexit -- "$f"; done
+
+find . -type f -name "*jackson*.mp3" | shuf | while read f; do ffplay -autoexit -- "$f"; done

@@ -1,0 +1,28 @@
+for oldname in *
+do
+  newname=`echo $oldname | sed -e 's/ /_/g'`
+  mv "$oldname" "$newname"
+done
+
+***
+
+Please do note that this will overwrite files with the same name. That is, if there are two files that have otherwise identical filenames, but one has underscore(s) where the other has space(s). In that situation, the one that had underscores will be overwritten with the one that had spaces. This longer version will skip those cases instead:
+
+***
+
+for oldname in *
+do
+  newname=`echo $oldname | sed -e 's/ /_/g'`
+  if [ "$newname" = "$oldname" ]
+  then
+    continue
+  fi
+  if [ -e "$newname" ]
+  then
+    echo Skipping "$oldname", because "$newname" exists
+  else
+    mv "$oldname" "$newname"
+  fi
+done
+
+https://stackoverflow.com/questions/16445082/remove-spaces-from-filenames-in-folder

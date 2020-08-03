@@ -1,0 +1,7 @@
+#!/bin/bash
+for file in *.mp3
+do
+    filename=$(basename $file)
+    outputfile="./fast/${filename%.*}-fast.mp3"
+     ffmpeg -i $file -filter:a "atempo=2.0" -vn $outputfile
+done

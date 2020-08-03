@@ -1,0 +1,12 @@
+convert avi to mpeg for dvd players
+
+If you have a video you'd like to watch on a DVD player, here is how to properly encode it:
+
+ffmpeg -i source_video.avi -target pal-dvd -ps 2000000000 -aspect 16:9 final_video.mpeg
+
+Explanations:
+
+- `target pal-dvd` : Output format
+- `-ps 2000000000`: Maximum size for the output file, in bits (here, 2Gb)
+- `-aspect 16:9`: Widescreen
+

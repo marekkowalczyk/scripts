@@ -1,0 +1,22 @@
+Hero image size:
+
+- 16:9 aspect ratio
+- 1600 x 500 px
+- less than 400kb
+- only put images on your website that have been compressed — use Compress Lite app
+
+https://www.lauraleeflores.com/blog/header-image-sizing-guide
+
+
+convert IN.jpg -resize 1600x500 OUT.jpg
+
+convert input.png -background white -gravity center -extent 100x300 -flatten output.png
+
+
+convert IN.jpg  -gravity center -extent 8000x4500 OUT.jpg
+
+
+Use 'Resize Master'.app
+
+
+http://hornil.com/apps/photocrop/
