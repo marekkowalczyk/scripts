@@ -1,5 +1,9 @@
-exiftool -Title="This is the Title" -Author="Happy Man" -Subject="PDF Metadata" drawing.pdf
+exiftool -Title=${1:Title} -Author=${2:Author} -Subject=${3:Subject} ${4:IN.pdf}
 
--overwrite_original
+# for file in *.pdf;do
+# 	exiftool -Keywords="MANDARINE Sp. z o.o." -Subject="Walne Zgromadzenie 2016" "$file"
+# done
 
-exiftool -XMP-dc:Creator="Jane Doe" -XMP-dc:Publisher="Research-publishing.net" test.pdf
+# -overwrite_original
+
+# exiftool -XMP-dc:Creator="Jane Doe" -XMP-dc:Publisher="Research-publishing.net" test.pdf
